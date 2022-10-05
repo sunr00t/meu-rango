@@ -9,11 +9,16 @@
 
 Meu Rango tem por objetivo auxiliar os usuários quanto a importância de uma dieta equilibrada.
 
-[https://meu-rango.brunonascimento.dev.br/](https://meu-rango.brunonascimento.dev.br/)
-
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/qyJVd4g/MeuRango.gif" alt="MeuRango" border="0"></a>
 
-Atividade da disciplina Laboratório de Software - UniFG / Professor: Eduardo Arruda
+- Atividade da disciplina Laboratório de Software - UniFG
+- Professor: Eduardo Arruda
+- Disciplina: Laboratório de Software e Projetos
+
+
+## Demonstração
+
+[https://meu-rango.brunonascimento.dev.br/](https://meu-rango.brunonascimento.dev.br/)
 
 
 ## Autores
