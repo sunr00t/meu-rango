@@ -2,6 +2,10 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
 [![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-red)](https://github.com/sunr00t/meu-rango)
 
+![Rails](https://img.shields.io/badge/rails-%23CC0000.svg?style=for-the-badge&logo=ruby-on-rails&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
+
 
 Meu Rango tem por objetivo auxiliar os usuários quanto a importância de uma dieta equilibrada.
 
@@ -35,14 +39,6 @@ Para rodar esse projeto em usa máquina, você vai precisar adicionar as seguint
 `DB_USERNAME`
 `DB_PASSWORD`
 `DB_HOST`
-
-## Stack utilizada
-
-**Front-end:** TailwindCSS
-
-**Back-end:** Ruby on Rails
-
-**Database** Postgres
 
 
 
