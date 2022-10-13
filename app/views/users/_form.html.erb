@@ -2,7 +2,6 @@
   <% if user.errors.any? %>
     <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-lg mt-3">
       <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
-
       <ul>
         <% user.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,6 +9,25 @@
       </ul>
     </div>
   <% end %>
+
+  <div class="mt-5 md:col-span-2 md:mt-0">
+    <div class="shadow sm:overflow-hidden sm:rounded-md">
+      <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+    <label class="block text-sm font-medium text-gray-700">Avatar</label>
+    <div class="mt-1 flex items-center">
+      <span class="inline-block h-12 w-12 overflow-hidden rounded-full bg-gray-100">
+        <svg class="h-full w-full text-gray-300" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+        </svg>
+    </span>
+  
+      <div class="flex text-sm text-gray-600">
+        <label for="file-upload" class="relative cursor-pointer rounded-md bg-white font-medium text-blue-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-blue-500 focus-within:ring-offset-2 hover:text-blue-500">
+        <span>Upload a picture</span>
+        <input id="file-upload" name="file-upload" type="file" class="sr-only">
+        </label>
+      </div>
+  </div>
 
   <div class="my-5">
     <%= form.label :name %>
@@ -20,7 +38,6 @@
     <%= form.label :email %>
     <%= form.text_field :email, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
-  
   
   <div class="my-5">
     <%= form.label :password %>
