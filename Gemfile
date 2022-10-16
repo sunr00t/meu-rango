@@ -73,11 +73,10 @@ end
 
 gem 'dotenv-rails', groups: [:development, :test]
 gem "webpacker", "~> 5.4"
-
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "httparty", "~> 0.20.0"
-
 gem "net-http", "~> 0.2.2"
-
 gem "uri", "~> 0.11.0"
+
+gem "aws-sdk"

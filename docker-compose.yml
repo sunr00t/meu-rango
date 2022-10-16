@@ -11,6 +11,20 @@ services:
       POSTGRES_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
+
+  minio:
+    image: minio/minio:latest
+    hostname: minio
+    command: server --console-address ":9001" /data
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - ./tmp/minio:/data
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_REGION_NAME: ${MINIO_REGION_NAME}
   web:
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
@@ -20,5 +34,6 @@ services:
       - "3000:3000"
     depends_on:
       - db
+      - minio
     links:
       - db
