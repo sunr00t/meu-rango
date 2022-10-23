@@ -8,6 +8,6 @@ Rails.application.routes.draw do
     # Destroy Session
     get '/logout', to: 'devise/sessions#destroy'
 
-    root 'public#index'  
+    root 'dashboard#index'  
   end  
 end
