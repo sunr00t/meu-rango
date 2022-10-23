@@ -8,7 +8,7 @@ class UsersController < ApplicationController
       elsif has_errors? && default_action
         render rendering_options.merge(formats: :html, status: :unprocessable_entity)
       else
-        redirect_to :new_user_session
+        redirect_to :root
       end
     end
   end
