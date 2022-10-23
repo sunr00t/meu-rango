@@ -1,4 +1,4 @@
-class TurboDeviseController < ApplicationController
+class UsersController < ApplicationController
   class Responder < ActionController::Responder
     def to_turbo_stream
       controller.render(options.merge(formats: :html))
@@ -8,7 +8,7 @@ class TurboDeviseController < ApplicationController
       elsif has_errors? && default_action
         render rendering_options.merge(formats: :html, status: :unprocessable_entity)
       else
-        redirect_to navigation_location
+        redirect_to :new_user_session
       end
     end
   end
