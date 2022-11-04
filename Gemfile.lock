@@ -1403,6 +1403,8 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     jmespath (1.6.1)
+    jsbundling-rails (1.0.3)
+      railties (>= 6.0.0)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -1554,6 +1556,7 @@ DEPENDENCIES
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
+  jsbundling-rails (~> 1.0)
   net-http (~> 0.2.2)
   pg (~> 1.4.3)
   puma (~> 5.0)
