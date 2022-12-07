@@ -1,0 +1,19 @@
+<div class="min-h-full">
+  <%= render "helpers/navbar" %>
+  <main>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+      <table>
+        <thead>
+          <td>ID</td>
+          <td>Description</td>
+        </thead>
+        <% @categories.each do |c| %>
+        <tbody>
+          <td><%= c['id'] %></td>
+          <td><%= c['category'] %></td>
+        </tbody>
+        <% end %>
+      </table>
+    </div>
+  </main>
+</div>

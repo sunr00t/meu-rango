@@ -1,0 +1,25 @@
+<div class="min-h-full">
+  <%= render "helpers/navbar" %>
+  <main>
+    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+    
+      <table>
+        <thead>
+          <td>ID</td>
+          <td>Description</td>
+          <td>Proteina</td>
+        </thead>
+        <% @foods.each do |f| %>
+        <tbody>
+          <td><%= f['id'] %></td>
+          <td><%= f['description'] %></td>
+          <td><%= f['attributes'] %></td>
+        </tbody>
+        <% end %>
+      </table>
+
+
+
+    </div>
+  </main>
+</div>
