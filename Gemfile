@@ -77,6 +77,7 @@ gem "net-http", "~> 0.2.2"
 gem "uri", "~> 0.11.0"
 gem "aws-sdk"
 gem "devise", "~> 4.8"
+gem 'file_validators'
 gem "tailwindcss-rails", "~> 2.0"
 
 gem "jsbundling-rails", "~> 1.0"
