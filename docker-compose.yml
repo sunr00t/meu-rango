@@ -1,6 +1,7 @@
 version: "3.9"
 services:
   db:
+    container_name: db
     image: postgres
     restart: always
     ports:
@@ -13,6 +14,7 @@ services:
       - ./tmp/db:/var/lib/postgresql/data
 
   minio:
+    container_name: minio
     image: minio/minio:latest
     hostname: minio
     command: server --console-address ":9001" /data
@@ -26,6 +28,7 @@ services:
       MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
       MINIO_REGION_NAME: ${MINIO_REGION_NAME}
   web:
+    container_name: web
     build: .
     command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:

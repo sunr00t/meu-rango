@@ -8,9 +8,11 @@
     "postcss-import": "^15.0.0",
     "postcss-nested": "^6.0.0",
     "postcss-preset-env": "^7.8.2",
-    "sweetalert2": "^11.6.2"
+    "tailwindcss-stimulus-components": "^3.0.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "postcss-import": "^15.0.0"
+  },
   "scripts": {
     "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css",
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --public-path=assets"

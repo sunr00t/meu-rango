@@ -118,6 +118,11 @@
   resolved "https://registry.yarnpkg.com/@esbuild/linux-loong64/-/linux-loong64-0.15.12.tgz#475b33a2631a3d8ca8aa95ee127f9a61d95bf9c1"
   integrity sha512-tZEowDjvU7O7I04GYvWQOS4yyP9E/7YlsB0jjw1Ycukgr2ycEzKyIk5tms5WnLBymaewc6VmRKnn5IJWgK4eFw==
 
+"@hotwired/stimulus@>=3.0.0":
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.1.tgz#652f08a8e1d5edcb407340e58818fcff463b5848"
+  integrity sha512-e0JpzIaYLsRRXevRDVs0yevabiCvieIWWCwh7VqVXjXM5AOHdjb7AjaKIj34zYFmY1N6HIRRfk915WVMYlHnDA==
+
 "@hotwired/stimulus@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@hotwired/stimulus/-/stimulus-3.1.0.tgz#20215251e5afe6e0a3787285181ba1bfc9097df0"
@@ -720,6 +725,13 @@ sweetalert2@^11.6.2:
   version "11.6.2"
   resolved "https://registry.yarnpkg.com/sweetalert2/-/sweetalert2-11.6.2.tgz#282e01bf0c4a70bda5c6dc00e384ee85c228e9c3"
   integrity sha512-FAyAddpbcpEawDNFZDoO9XFFOc0ulECgQcadMJpsjMjrlqG7svar+ZGG3qddYYi8MZwUULrOxbtQj98EMIbH8w==
+
+tailwindcss-stimulus-components@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/tailwindcss-stimulus-components/-/tailwindcss-stimulus-components-3.0.4.tgz#598a880aed1a4966c2bf85fcc9c65fb63d02d2f0"
+  integrity sha512-kv4CHEcTvZSmthV6PseSdnW/QqKh237fZrvbNKNhWeYsTuEnOrKvdbR+3CmpuTok7L4XgEXk+XOFfo7AMhhtAA==
+  dependencies:
+    "@hotwired/stimulus" ">=3.0.0"
 
 update-browserslist-db@^1.0.5:
   version "1.0.5"
