@@ -1,68 +1,69 @@
-<div class="min-h-full">
-  <%= render "helpers/navbar" %>
+<%= render "helpers/navbar" %>
+  <div class="min-h-full">
+    <main>
+      <div class="pt-5 mx-auto md:w-2/3 w-full">
+        <!-- Replace with your content -->
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages" , resource: resource %>
+            <% if current_user.avatar.present? %>
+              <%= image_tag(current_user.avatar.variant(resize_to_fill: [100, 100]), class: "rounded-full w-28" ) %>
+                <% else %>
+                  <img alt="image" class="rounded-full w-28 " src="/assets/default_avatar_small.jpg">
+                  <% end %>
+                    <!--Avatar Upload Field-->
+                    <div class="form-group">
+                      <div class="pt-3 col-sm-8">
+                        <%= f.file_field :avatar, class: "form-control" %>
+                      </div>
+                    </div>
 
-  <main>
-    <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-      <!-- Replace with your content -->
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+                    <div class="field">
+                      <%= f.label :email %> <br/>
+                        <%= f.email_field :email, autofocus: true, autocomplete: "email" ,
+                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                    </div>
 
-        <!--Avatar Upload Field-->
-      <div class="form-group">
-          <label class="col-sm-4 col-form-label">Avatar:
-          <% if current_user.avatar.present? %><br />Current: <%= current_user.avatar.filename.to_s %><% end %>
-          </label>
-          <div class="col-sm-8"><%= f.file_field :avatar, class: "form-control" %></div>
-        </div>
-        <!--Avatar Upload Field-->
-        <% if current_user.avatar.present? %>
-        <%= image_tag(current_user.avatar.variant(resize_to_fill: [100, 100]), class: "rounded-circle") %>
-        <% else %>
-        <img alt="image" class="rounded-circle" src="/assets/default_avatar_small.jpg">
-        <% end %>
-        
-        <div class="field">
-          <%= f.label :email %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-        </div>
-      
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-      
-        <div class="field">
-          <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
-          <%= f.password_field :password, autocomplete: "new-password" %>
-          <% if @minimum_password_length %>
-            <br />
-            <em><%= @minimum_password_length %> characters minimum</em>
-          <% end %>
-        </div>
-      
-        <div class="field">
-          <%= f.label :new_password_confirmation %><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-        </div>
-      
-        <div class="field">
-          <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-          <%= f.password_field :current_password, autocomplete: "current-password" %>
-        </div>
-      
-        <div class="actions">
-          <%= f.submit "Update" %>
-        </div>
-      <% end %>
-      
-      <h3>Cancel my account</h3>
-      
-      <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-      
-      <%= link_to "Back", :back %>
-      <!-- /End replace -->
-    </div>
-  </main>
-</div>
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %>
+                      </div>
+                    <% end %>
 
+                    <div class="field">
+                      <%= f.label :new_password %> <i>(leave blank if you don't want to change it)</i><br />
+                        <%= f.password_field :password, autocomplete: "new-password" ,
+                          class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+                          %>
+                          <% if @minimum_password_length %>
+                            <br />
+                            <em>
+                              <%= @minimum_password_length %> characters minimum
+                            </em>
+                            <% end %>
+                    </div>
 
+                    <div class="field">
+                      <%= f.label :new_password_confirmation %><br />
+                        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,
+                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full"
+                      %>
+                    </div>
 
+                  <div class="field">
+                    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+                        <%= f.password_field :current_password, autocomplete: "current-password" ,
+                        class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.submit "Update" %>
+                    </div>
+                    <% end %>
+
+                    <h3>Cancel my account</h3>
+
+                  <p>Unhappy? <%= button_to "Cancel my account" , registration_path(resource_name) %> </p> 
+                  <%= link_to "Back" , :back %>
+    
+      </div>
+    </main>
+  </div>

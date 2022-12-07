@@ -24,7 +24,7 @@
               <%= food['attributes']['protein']['qty'].to_f.round(2) rescue '0' %>
             </td>
             <td class="text-sm text-gray-900 font-light px-6 py-4">
-              <%= food['attributes']['carbohydrate'] %>
+              <%= food['attributes']['carbohydrate']['qty'].to_f.round(2) rescue '0' %>
             </td>
             <td class="text-sm text-gray-900 font-light px-6 py-4">
               <%= food['attributes']['energy']['kcal'].to_i.round() %>
