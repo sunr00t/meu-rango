@@ -1,46 +1,37 @@
-<div class="min-h-full">
-  <%= render "helpers/navbar" %>
-  
-    <div class="flex flex-col">
-      <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
-        <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
-          <div >
-            <table class="min-w-full">
-              <thead class="border-b bg-blue-500 text-white px-3 py-2 ">
-                <tr class=" justify-center border-collapse border border-slate-400">
-                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">ID</th>
-                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">Description</th>
-                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">Proteina</th>
-                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">Carboidrato</th>
-                  <th scope="col" class="text-sm font-medium text-white px-6 py-4">Calorias</th>
-                </tr>
-              </thead>
-                <% @foods.each do |f| %>
-                <tbody>
-                  <tr class="border-b">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                      <%= f['id'] %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= f['description'] %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= f['attributes']['protein'] %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= f['attributes']['carbohydrate'] %>
-                    </td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                      <%= f['attributes']['energy'] %>
-                    </td>
-                </tr>
-                </tbody>
-                <% end %>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
+<%= render "helpers/navbar" %>
 
-
+  <div class="pt-5 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <table class="table-fixed">
+      <thead class="border-b bg-blue-500 text-white px-3 py-2 ">
+        <tr class="border-collapse border border-slate-400">
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4">ID</th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Descrição</th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Proteína (g)</th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Carboidrato (g) </th>
+          <th scope="col" class="text-sm font-medium text-white px-6 py-4">Calorias (cal) </th>
+        </tr>
+      </thead>
+      <% @foods.each do |food| %>
+        <tbody>
+          <tr class="border-b">
+            <td class="text-sm text-gray-900 font-light px-6 py-4">
+              <%= food['id'] %>
+            </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4">
+              <%= food['description'] %>
+            </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4">
+              <%= food['attributes']['protein']['qty'].to_f.round(2) rescue '0' %>
+            </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4">
+              <%= food['attributes']['carbohydrate'] %>
+            </td>
+            <td class="text-sm text-gray-900 font-light px-6 py-4">
+              <%= food['attributes']['energy']['kcal'].to_i.round() %>
+            </td>
+          </tr>
+        </tbody>
+        <% end %>
+    </table>
+  </div>
+  </div>

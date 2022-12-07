@@ -1,4 +1,4 @@
-class FoodController < ApplicationController
+class TacoController < ApplicationController
   before_action :set_taco_service
 
   def index
