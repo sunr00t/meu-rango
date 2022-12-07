@@ -61,7 +61,8 @@
 
                     <h3>Cancel my account</h3>
 
-                  <p>Unhappy? <%= button_to "Cancel my account" , registration_path(resource_name) %> </p> 
+                    <p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), method: :delete %></p>
+                    
                   <%= link_to "Back" , :back %>
     
       </div>
