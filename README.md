@@ -11,18 +11,19 @@ Meu Rango tem por objetivo auxiliar os usuários quanto a importância de uma di
 
 <a href="https://imgbb.com/"><img src="https://i.ibb.co/qyJVd4g/MeuRango.gif" alt="MeuRango" border="0"></a>
 
-- Atividade da disciplina Laboratório de Software - UniFG
-- Professor: Eduardo Arruda
-- Disciplina: Laboratório de Software e Projetos
-
-
 ## Demonstração
 
 [https://meu-rango.brunonascimento.dev.br/](https://meu-rango.brunonascimento.dev.br/)
 
+## Docente
+- Professor: Eduardo Arruda
+- Disciplina: Laboratório de Software e Projetos / UniFG
+
 
 ## Autores
 - [Bruno A. Nascimento](https://www.github.com/sunr00t)
+- Elion de Oliveira Santos Silva
+
 
 ## API
 - [Raul Melo](https://github.com/raulfdm) (Taco-Api)
@@ -35,15 +36,19 @@ Meu Rango tem por objetivo auxiliar os usuários quanto a importância de uma di
   docker-compose up --build
 ```
 
-
 ## Variáveis de Ambiente
 
-Para rodar esse projeto em usa máquina, você vai precisar adicionar as seguintes variáveis de ambiente no seu `.env`
+Para rodar esse projeto você vai precisar criar as seguintes variáveis de ambiente em seu arquivo `.env`
 
 `DB_NAME`
 `DB_USERNAME`
 `DB_PASSWORD`
 `DB_HOST`
+`MINIO_ROOT_USER`
+`MINIO_ROOT_PASSWORD`
+`MINIO_REGION_NAME`
+`MINIO_BUCKET`
+`MINIO_ENDPOINT`
 
 
 
