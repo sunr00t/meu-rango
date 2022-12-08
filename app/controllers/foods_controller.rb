@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: %i[ show edit update destroy ]
+  before_action :set_current_user
 
   # GET /foods or /foods.json
   def index
@@ -8,12 +9,14 @@ class FoodsController < ApplicationController
 
   # GET /foods/1 or /foods/1.json
   def show
+     @food
+     @taco_food = TacoService.id(@food.taco_id)
   end
 
   # GET /foods/new
   def new
     @food = Food.new
-    @taco_foods = TacoService.foods.map{ | food | [food ['description'], food ['id']] }
+    @taco_foods = TacoService.foods.map{ |food| [food['description'], food ['id']] }
   end
 
   # GET /foods/1/edit
@@ -21,8 +24,9 @@ class FoodsController < ApplicationController
   end
 
   # POST /foods or /foods.json
-  def create
+  def create    
     @food = Food.new(food_params)
+    @food.user = current_user
 
     respond_to do |format|
       if @food.save
@@ -36,7 +40,7 @@ class FoodsController < ApplicationController
   end
 
   # PATCH/PUT /foods/1 or /foods/1.json
-  def update
+  def updatetaco_id
     respond_to do |format|
       if @food.update(food_params)
         format.html { redirect_to food_url(@food), notice: "Food was successfully updated." }
@@ -64,8 +68,12 @@ class FoodsController < ApplicationController
       @food = Food.find(params[:id])
     end
 
+    def set_current_user
+      user_id = current_user.id
+    end
+
     # Only allow a list of trusted parameters through.
     def food_params
-      params.require(:food).permit(:taco_id)
+      params.require(:food).permit(:taco_id, :user_id, :snack)
     end
 end

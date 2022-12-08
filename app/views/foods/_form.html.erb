@@ -12,6 +12,11 @@
   <% end %>
 
   <div class="my-5">
+    <%= form.label :snack %>
+    <%= form.text_field :snack, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
+  </div>
+
+  <div class="my-5">
     <%= form.label :taco_id %>
     <%= form.select :taco_id, @taco_foods, {}, { class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" }  %>
   </div>
