@@ -1388,8 +1388,8 @@ GEM
       mime-types (>= 1.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
-    httparty (0.20.0)
-      mime-types (~> 3.0)
+    httparty (0.21.0)
+      mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
@@ -1548,7 +1548,7 @@ DEPENDENCIES
   devise (~> 4.8)
   dotenv-rails
   file_validators
-  httparty (~> 0.20.0)
+  httparty (~> 0.21.0)
   image_processing (~> 1.2)
   importmap-rails
   jbuilder
